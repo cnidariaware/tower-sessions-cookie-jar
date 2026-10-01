@@ -22,7 +22,7 @@ use tower::ServiceExt as _;
     all(feature = "key-expansion", feature = "signed"),
     all(feature = "key-expansion", feature = "private")
 ))]
-use tower_sessions_cookie_store::{CookieSessionConfig, CookieSessionManagerLayer, Key, Session};
+use tower_sessions_cookie_jar::{CookieSessionConfig, CookieSessionManagerLayer, Key, Session};
 
 #[cfg(any(
     all(feature = "key-expansion", feature = "signed"),

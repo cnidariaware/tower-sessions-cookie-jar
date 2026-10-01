@@ -9,7 +9,7 @@ use time::{Duration, OffsetDateTime};
 use tower::{ServiceBuilder, ServiceExt as _};
 use tower_service::Service as _;
 
-use tower_sessions_cookie_store::{CookieSessionConfig, DEFAULT_COOKIE_NAME, Expiry};
+use tower_sessions_cookie_jar::{CookieSessionConfig, DEFAULT_COOKIE_NAME, Expiry};
 
 fn assert_max_age_seconds_close(cookie: &tower_cookies::Cookie<'_>, expected_seconds: i64) {
     // Max-Age is computed relative to "now", so assertions allow a small amount of clock drift.

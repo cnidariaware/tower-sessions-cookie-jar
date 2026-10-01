@@ -7,9 +7,7 @@ mod common;
 use axum::{Router, body::Body, routing::get};
 use http::{Request, header};
 use tower::ServiceExt as _;
-use tower_sessions_cookie_store::{
-    CookieSessionConfig, CookieSessionManagerLayer, Session, format,
-};
+use tower_sessions_cookie_jar::{CookieSessionConfig, CookieSessionManagerLayer, Session, format};
 
 fn app() -> Router {
     // Router using plaintext cookies with `secure=false` so tests can use plain HTTP semantics.

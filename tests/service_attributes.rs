@@ -8,7 +8,7 @@ use axum::body::Body;
 use http::{Request, header};
 use tower::{ServiceBuilder, ServiceExt as _};
 
-use tower_sessions_cookie_store::{CookieSessionConfig, DEFAULT_COOKIE_NAME, SameSite};
+use tower_sessions_cookie_jar::{CookieSessionConfig, DEFAULT_COOKIE_NAME, SameSite};
 
 #[tokio::test]
 async fn basic_service() {

@@ -11,7 +11,7 @@ use http::{HeaderMap, Request, Response, header};
 use http_body_util::BodyExt as _;
 use tower_cookies::{Cookie, Key, cookie::CookieJar};
 use tower_sessions::session::Record;
-use tower_sessions_cookie_store::{CookieSessionConfig, CookieSessionManagerLayer, Session};
+use tower_sessions_cookie_jar::{CookieSessionConfig, CookieSessionManagerLayer, Session};
 
 pub async fn body_string(body: Body) -> String {
     // Collect an Axum body into a UTF-8 string for assertions.
@@ -48,7 +48,7 @@ pub fn make_signed_layer(
     config: CookieSessionConfig,
 ) -> (
     Key,
-    CookieSessionManagerLayer<tower_sessions_cookie_store::SignedCookie>,
+    CookieSessionManagerLayer<tower_sessions_cookie_jar::SignedCookie>,
 ) {
     // Create a signed-cookie session layer and return both the key and the layer for tests that
     // need to inspect/unsign cookie values.
@@ -93,6 +93,6 @@ pub fn unsigned_cookie_value(cookie: Cookie<'static>, key: &Key, name: &str) -> 
 
 pub fn decode_record(unsigned_value: &str) -> Record {
     // Decode an unsigned cookie value into the session record payload.
-    tower_sessions_cookie_store::format::decode_record(unsigned_value)
+    tower_sessions_cookie_jar::format::decode_record(unsigned_value)
         .expect("cookie record decodes successfully")
 }
