@@ -1,26 +1,28 @@
-name: Release
+# Disabled manual releases instead
 
-on:
-  push:
-    tags:
-      - "v*"
-  workflow_dispatch:
+# name: Release
 
-permissions:
-  contents: write
+# on:
+#   push:
+#     tags:
+#       - "v*"
+#   workflow_dispatch:
 
-jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+# permissions:
+#   contents: write
 
-      - name: Create GitHub release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref_name }}
-          release_name: ${{ github.ref_name }}
-          body_path: CHANGELOG.md
+# jobs:
+#   release:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+
+#       - name: Create GitHub release
+#         uses: actions/create-release@v1
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           tag_name: ${{ github.ref_name }}
+#           release_name: ${{ github.ref_name }}
+#           body_path: CHANGELOG.md
