@@ -1,0 +1,7 @@
+
+# Added private registry as a backup
+
+# Reminder for myself
+# cargo publish --registry cnidariaware
+[registries.cnidariaware]
+index = "sparse+https://forge.cnidariaware.ca/api/packages/cnidariaware/cargo/"
