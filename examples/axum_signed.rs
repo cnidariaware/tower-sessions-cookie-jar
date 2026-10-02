@@ -2,7 +2,7 @@ use std::net::SocketAddr;
 
 use axum::{Router, routing::get};
 use time::Duration;
-use tower_sessions_cookie_store::{
+use tower_sessions_cookie_jar::{
     CookieSessionConfig, CookieSessionManagerLayer, Expiry, Key, SameSite, Session,
 };
 

@@ -1,6 +1,6 @@
 //! Cookie-backed session persistence for `tower-sessions`.
 //!
-//! This crate provides a layer that inserts `tower_sessions_core::Session` into request
+//! This crate provides a layer that inserts `tower_sessions::Session` into request
 //! extensions and persists the session record into a cookie.
 //!
 //! # Security
@@ -15,7 +15,7 @@
 //!
 //! ```rust
 //! use axum::{routing::get, Router};
-//! use tower_sessions_cookie_store::{CookieSessionConfig, CookieSessionManagerLayer, Key, Session};
+//! use tower_sessions_cookie_jar::{CookieSessionConfig, CookieSessionManagerLayer, Key, Session};
 //!
 //! async fn handler(session: Session) -> String {
 //!     let n: usize = session.get("n").await.expect("session get succeeds").unwrap_or(0);
@@ -44,7 +44,7 @@ pub mod layer;
 mod store;
 
 pub use tower_cookies::cookie::SameSite;
-pub use tower_sessions_core::{Session, session::Expiry, session_store};
+pub use tower_sessions::{Session, session::Expiry, session_store};
 
 #[cfg(any(feature = "signed", feature = "private"))]
 pub use tower_cookies::Key;

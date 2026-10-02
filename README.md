@@ -1,17 +1,29 @@
-# tower-sessions-cookie-store
+# tower-sessions-cookie-jar
 
-[![crates.io](https://img.shields.io/crates/v/tower-sessions-cookie-store.svg)](https://crates.io/crates/tower-sessions-cookie-store)
-[![docs.rs](https://docs.rs/tower-sessions-cookie-store/badge.svg)](https://docs.rs/tower-sessions-cookie-store)
+<!-- [![crates.io](https://img.shields.io/crates/v/tower-sessions-cookie-store.svg)](https://crates.io/crates/tower-sessions-cookie-store) -->
+<!-- [![docs.rs](https://docs.rs/tower-sessions-cookie-store/badge.svg)](https://docs.rs/tower-sessions-cookie-store) -->
+
+No crates.io site right now https://github.com/cnidariaware/tower-sessions-cookie-jar, official homepage for now
 
 Cookie-backed session persistence for [`tower-sessions`](https://crates.io/crates/tower-sessions).
 
 This crate provides `CookieSessionManagerLayer`, a Tower layer for cookie-backed sessions. It
 integrates with `tower-sessions` and works with Axum extractors.
 
+## Disclaimers
+
+This is a **fork** of the original [tower-sessions-cookie-store](https://crates.io/crates/tower-sessions-cookie-store).
+
+The maintainer has since decided to no longer maintain this crate so I have decided to maintain and update this crate.
+
+### Why is it Named like this?
+
+Because cookies are stored in a cookie jar (Duh).
+
 ## Install
 
 ```bash
-cargo add tower-sessions-cookie-store
+cargo add tower-sessions-cookie-jar
 ```
 
 ## Features
@@ -34,7 +46,7 @@ For more usage examples, see the [`examples/`](examples/) directory.
 
 ```rust
 use axum::{routing::get, Router};
-use tower_sessions_cookie_store::{CookieSessionConfig, CookieSessionManagerLayer, Key, Session};
+use tower_sessions_cookie_jar::{CookieSessionConfig, CookieSessionManagerLayer, Key, Session};
 
 async fn handler(session: Session) -> String {
     let n: usize = session.get("n").await.expect("session get succeeds").unwrap_or(0);
@@ -82,7 +94,7 @@ let router = Router::new()
 The cookie value encodes the full session record using a versioned, base64url-encoded JSON
 envelope. The format is an implementation detail and may change between releases.
 
-For testing/debugging, the crate exposes `tower_sessions_cookie_store::{encode_record,
+For testing/debugging, the crate exposes `tower_sessions_cookie_jar::{encode_record,
 decode_record}`.
 
 ## Benefits of cookie-backed session storage
@@ -118,7 +130,7 @@ decode_record}`.
   - No. Cookies are limited (~4 KB by default). Use a server-side store if you need larger
     payloads.
 - Can I use this cross-site?
-  - Set `SameSite::None` and `secure = true` (required by browsers).  It is very unlikely that you actually want to do this.  Use caution.
+  - Set `SameSite::None` and `secure = true` (required by browsers). It is very unlikely that you actually want to do this. Use caution.
 - Do I need HTTPS in production?
   - Yes; leave `secure = true` so browsers only send the cookie over HTTPS. Only disable it locally
     for development.

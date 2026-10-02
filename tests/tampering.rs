@@ -5,7 +5,7 @@ use axum::{Router, body::Body, routing::get};
 use http::{Request, header};
 use tower::ServiceExt as _;
 use tower_cookies::Cookie;
-use tower_sessions_cookie_store::{CookieSessionConfig, CookieSessionManagerLayer, Key, Session};
+use tower_sessions_cookie_jar::{CookieSessionConfig, CookieSessionManagerLayer, Key, Session};
 
 fn tamper_cookie_value(cookie: &mut Cookie<'_>) {
     // Flip the last character to force a mismatch while keeping the cookie parseable.

@@ -9,7 +9,7 @@ use http::{Request, StatusCode, header};
 use time::{Duration, OffsetDateTime};
 use tower::ServiceExt as _;
 use tower_cookies::{Cookie, cookie::CookieJar};
-use tower_sessions_cookie_store::{
+use tower_sessions_cookie_jar::{
     CookieSessionConfig, CookieSessionManagerLayer, Expiry, Key, SameSite, Session,
 };
 
