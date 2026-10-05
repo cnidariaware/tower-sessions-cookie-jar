@@ -8,6 +8,28 @@ The maintainer has since decided to no longer maintain this crate so I have deci
 
 Because cookies are stored in a cookie jar.
 
+### Updates
+
+Updates will come earlier to my own personal Forgejo instance as I can delete and fix bugs cleanly without switching versions constantly, but it should be considered unstable
+
+Installation
+Setup this registry in the Cargo configuration file (for example ~/.cargo/config.toml):
+
+```toml
+[registries.forgejo]
+index = "sparse+https://forge.cnidariaware.ca/api/packages/cnidariaware/cargo/" # Sparse index
+# index = "https://forge.cnidariaware.ca/cnidariaware/_cargo-index.git" # Git
+
+[net]
+git-fetch-with-cli = true
+```
+
+To install the package using Cargo, run the following command:
+
+```bash
+cargo add tower-sessions-cookie-jar@0.5.3 --registry forgejo
+```
+
 # tower-sessions-cookie-jar
 
 <!-- [![crates.io](https://img.shields.io/crates/v/tower-sessions-cookie-store.svg)](https://crates.io/crates/tower-sessions-cookie-store) -->
