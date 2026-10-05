@@ -1,3 +1,13 @@
+## Disclaimers
+
+This is a **fork** of the original [tower-sessions-cookie-store](https://crates.io/crates/tower-sessions-cookie-store).
+
+The maintainer has since decided to no longer maintain this crate so I have decided to maintain and update this crate.
+
+### Why is it Named like this?
+
+Because cookies are stored in a cookie jar.
+
 # tower-sessions-cookie-jar
 
 <!-- [![crates.io](https://img.shields.io/crates/v/tower-sessions-cookie-store.svg)](https://crates.io/crates/tower-sessions-cookie-store) -->
@@ -9,16 +19,6 @@ Cookie-backed session persistence for [`tower-sessions`](https://crates.io/crate
 
 This crate provides `CookieSessionManagerLayer`, a Tower layer for cookie-backed sessions. It
 integrates with `tower-sessions` and works with Axum extractors.
-
-## Disclaimers
-
-This is a **fork** of the original [tower-sessions-cookie-store](https://crates.io/crates/tower-sessions-cookie-store).
-
-The maintainer has since decided to no longer maintain this crate so I have decided to maintain and update this crate.
-
-### Why is it Named like this?
-
-Because cookies are stored in a cookie jar (Duh).
 
 ## Install
 
