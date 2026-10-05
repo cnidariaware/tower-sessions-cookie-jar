@@ -10,7 +10,7 @@ Because cookies are stored in a cookie jar.
 
 ### Updates
 
-Updates will come earlier to my own personal Forgejo instance as I can delete and fix bugs cleanly without switching versions constantly, but it should be considered unstable
+Updates will come earlier to my own personal Forgejo instance as I can delete and fix bugs cleanly without switching versions constantly, but it should be considered unstable. Only the latest crate will be published there, use crates.io for a more stable experience.
 
 Installation
 Setup this registry in the Cargo configuration file (for example ~/.cargo/config.toml):
