@@ -30,6 +30,7 @@ All notable changes to this project will be documented in this file.
 
 <!-- Links -->
 
-[0.5.2]: https://github.com/cnidariaware/tower-sessions-cookie-store/releases/tag/v0.5.2
-[0.5.1]: https://github.com/cnidariaware/tower-sessions-cookie-store/releases/tag/v0.5.1
-[0.5.0]: https://github.com/cnidariaware/tower-sessions-cookie-store/releases/tag/v0.5.0
+[0.5.3]: https://github.com/cnidariaware/tower-sessions-cookie-jar/releases/tag/v0.5.3
+[0.5.2]: https://github.com/benwilber/tower-sessions-cookie-store/releases/tag/v0.5.2
+[0.5.1]: https://github.com/benwilber/tower-sessions-cookie-store/releases/tag/v0.5.1
+[0.5.0]: https://github.com/benwilber/tower-sessions-cookie-store/releases/tag/v0.5.0
